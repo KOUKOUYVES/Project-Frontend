@@ -1,0 +1,21 @@
+
+/* Header/Logo Title */
+.header {
+    background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 60px;
+    text-align: center;
+    background: #84fab0;
+    background: linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1));
+    color: #000;
+    font-size: 30px;
+    height: 600px;
+  }
+  h1{
+    font-size: 100px;
+  }
+  
+  /* Page Content */
+  .content {padding:20px;}

@@ -1,0 +1,44 @@
+
+<app-navbar></app-navbar>
+
+<section class="vh-100 bg-image"
+  style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-5">
+              <h2 class="text-uppercase text-center mb-5">Espace de connexion</h2>
+
+              <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="form3Example3cg">Votre username</label>
+                  <input type="text" name="username"  formControlName="username" [ngClass]="{ 'is-invalid': submitted && f['username'].errors }" id="form3Example3cg" placeholder="Entrer votre email" class="form-control form-control-lg" />
+                  <div *ngIf="submitted && f['username'].errors" class="invalid-feedback">
+                    <div *ngIf="f['username'].errors['required']"> Le email est obligatoire</div>
+                 </div>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="form3Example4cg">Votre mot de passe</label>
+                  <input type="password" name="password" formControlName="password" [ngClass]="{ 'is-invalid': submitted && f['password'].errors }" id="form3Example4cg" placeholder="Entre votre mot de passe" class="form-control form-control-lg" />
+                    <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+                        <div *ngIf="f['password'].errors['required']"> le mot de passe est obligatoire</div>
+                     </div>
+                </div>
+
+                <div class="d-flex justify-content-center">
+                  <button type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Login</button>
+                </div>
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<app-footer></app-footer>

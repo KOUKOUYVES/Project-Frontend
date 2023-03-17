@@ -1,0 +1,61 @@
+
+<app-navbar-user></app-navbar-user>
+
+
+<div class="main-container">
+    <div class="navcontainer">
+        <app-sidebar-user></app-sidebar-user>
+    </div>
+    <div class="main">
+        <div class="searchbar2">
+            <input type="text"
+                name=""
+                id=""
+                placeholder="Search">
+            <div class="searchbtn">
+            <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210180758/Untitled-design-(28).png"
+                    class="icn srchicn"
+                    alt="search-button">
+            </div>
+        </div>
+
+        
+        <div class="report-container">
+            <div class="report-header">
+                <h1 class="recent-Articles">Recent Articles</h1>
+                <a routerLink="/all_rapport"><button class="view">All Rapport</button></a> 
+                <a routerLink="/create-rapport"><button class="view">Add</button></a> 
+
+            </div>
+
+            <div class="report-body">
+                <div class="report-topic-heading">
+                    <h3 class="t-op">Titre Rapport</h3>
+                    <h3 class="t-op">Date Rapport</h3>
+                    <h3 class="t-op">Contenu Rapport</h3>
+                    <h3 class="t-op">Actions</h3>
+                </div>
+
+                <div class="items">
+                    <div class="item1">
+                        <h3 class="t-op-nextlvl">Article 73</h3>
+                        <h3 class="t-op-nextlvl">2.9k</h3>
+                        <h3 class="t-op-nextlvl">210</h3>
+                        <h3 class="t-op-nextlvl label-tag">Published</h3>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let menuicn = document.querySelector(".menuicn");
+    let nav = document.querySelector(".navcontainer");
+    
+    menuicn.addEventListener("click",()=>
+    {
+        nav.classList.toggle("navclose");
+    })
+    </script>

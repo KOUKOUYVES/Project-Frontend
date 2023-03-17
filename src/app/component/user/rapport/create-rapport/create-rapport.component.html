@@ -1,0 +1,63 @@
+
+<app-navbar-user></app-navbar-user>
+    <div class="main-container">
+        <div class="navcontainer">
+            <app-sidebar-user></app-sidebar-user>
+        </div>
+        <div class="container"><br><br><br><br>
+            <form [formGroup]="registerFormRapport" (ngSubmit)="onSubmit()"  class="form-field">
+                <div class="form-body">
+                  <div class="col-start">
+                  </div>
+                  <div class="row">
+                      <div class="col-6 p-2">
+                        <div class="col-middle">
+                            <div class="form-group">
+                              <label for="tel">Titre Rapport</label><br />
+                              <input type="text" name="titre_rapport" formControlName="titre_rapport" [ngClass]="{ 'is-invalid': submitted && f['titre_rapport'].errors }" id="" class="form-control form-control-lg">
+                              <div *ngIf="submitted && f['titre_rapport'].errors" class="invalid-feedback">
+                                <div *ngIf="f['titre_rapport'].errors['required']"> Le nom est obligatoire</div>
+                             </div>
+                            </div>
+                          </div>
+                      </div>
+                      <div class="col-6 p-2">
+                        <div class="col-middle">
+                            <div class="form-group">
+                              <label for="tel">Date Rapport</label><br />
+                              <input type="date" name="rapport_date" formControlName="rapport_date" [ngClass]="{ 'is-invalid': submitted && f['rapport_date'].errors }" name="tel" id="tel" class="form-control form-control-lg">
+                              <div *ngIf="submitted && f['rapport_date'].errors" class="invalid-feedback">
+                                <div *ngIf="f['rapport_date'].errors['required']"> Le nom est obligatoire</div>
+                             </div>
+                            </div>
+                          </div>
+                      </div>
+                </div>
+                  <br>
+
+                  <div class="col-end">
+                    <div class="form-group">
+                      <label for="bio">Contenu Rapport</label><br />
+                      <textarea
+                        name="city"
+                        id="city"
+                        cols="30"
+                        rows="10"
+                        class="form-control field-grow" name="texte_rapport" formControlName="texte_rapport" [ngClass]="{ 'is-invalid': submitted && f['texte_rapport'].errors }">
+                    </textarea>
+                    <div *ngIf="submitted && f['texte_rapport'].errors" class="invalid-feedback">
+                        <div *ngIf="f['texte_rapport'].errors['required']"> Le nom est obligatoire</div>
+                     </div>
+                    </div>
+                    
+                  </div>
+                </div><br>
+                <button type="submit" class="btn btn-outline-primary p-2">
+                  Enregistrer le Rapport
+                </button>
+              </form>
+        </div>
+       
+    </div>
+
+    

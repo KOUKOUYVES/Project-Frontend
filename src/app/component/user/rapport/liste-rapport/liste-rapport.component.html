@@ -1,0 +1,80 @@
+
+<app-navbar-user></app-navbar-user>
+    <div class="main-container">
+        <div class="navcontainer">
+            <app-sidebar-user></app-sidebar-user>
+        </div>
+        <div class="container"><br><br><br><br>
+
+            <div class="container-fluid">
+                <h2 class="text-center mt-5 mb-3"></h2>
+                <div class="card">
+                    <!-- <div class="card-header">
+                        <a class="btn btn-outline-primary" href="{{ path('app_register') }}"> 
+                            Create New Project 
+                        </a>
+                    </div> -->
+            
+                    <div class="report-header">
+                        <h1 class="recent-Articles">Liste Des Rapport</h1>
+                        <a routerLink="/create-rapport"><button class="view">Create New User</button></a> 
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-bordered">
+                            <tr>
+                                <th>Titre Rapport</th>
+                                <th>Date Rapport</th>
+                                <th>Contenu Rapport</th>
+                                <!-- <th>Email</th>
+                                <th>Contact</th> -->
+                                <th width="330px">Action</th>
+                            </tr>
+                            <!-- {% for user in projects %} -->
+                            <tr *ngFor="let rapport of rapports; let i = index;">
+                                <td>{{ rapport.titre_rapport }}</td>
+                                <td>{{ rapport.rapport_date |date:'fullDate' }}</td>
+                                <td>{{ rapport.texte_rapport }}</td>
+                                <!-- <td>{{ rapport.email }}</td>
+                                <td>{{ rapport.contact }}</td> -->
+                                <td>
+                                        <a class="btn btn-outline-info" type="button" href="">Show</a>
+                                        <a class="btn btn-outline-success" type="button" href="">Edit</a>
+                                        <button type="button"  onclick="return confirmRegistre(this)" (click)="deleteRapport(rapport)" class="btn btn-outline-danger">Delete</button>
+                                </td>
+                            </tr>
+                            <!-- {% endfor %} -->
+            
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+    </div>
+
+    <script>
+
+        function confirmRegistre(el) {
+                swal({
+                    title: "Êtes-vous sûr ?",
+                    text: "Une fois supprimé, vous ne pourrez pas récupérer ce fichier!",
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+                    })
+                    .then((willDelete) => {
+                    if (willDelete) {
+                        // swal("Poof! Your imaginary file has been deleted!", {
+                        // icon: "success",
+                        // });
+                        window.location = el.getAttribute("href");
+                    } else {
+                        swal("Votre fichier  est en sécurité !");
+                    }
+                    });
+                    return false;
+                }
+            </script>
+         
+
+    
