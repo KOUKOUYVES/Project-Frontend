@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { UserService } from './user.service';
+import {  Observable } from 'rxjs';
+import { Rapport } from 'src/app/user.model';
 
 
 @Injectable({
@@ -43,31 +45,27 @@ export class RapportService {
     //    return this.http.post(this.baseUrl + 'api/login_check', user);
     // }
 
-    // getSingleStudent(id:any) {
-    //   return this.http.get<Users[]>(this.baseUrl+'view.php?id='+id);
-    // } 
+    getSingleRapport(id:any) {
+      return this.http.get(this.baseUrl+'view.php?id='+id);
+    } 
 
-    deleteRapport(id:any) {
+    deleteRapports(id:any) {
       console.log(id);
-      return this.http.delete(this.baseUrl+'rapport/delete?id='+ id);  
+      return this.http.delete(this.baseUrl+'rapport/delete/'+ id);  
     }  
 
 
+    getFindIdRapport(id:any){
+      console.log(id);
+      return this.http.get(this.baseUrl +'find/rapport/' + id)
+      
 
-    // editStudent(student:any) {
-    //     return this.http.put(this.baseUrl+'update.php', student);  
-    //   }  
     }
 
-
-    // export class Users{
-    //   user_id?: number;  
-    //   firstname?: string;  
-    //   lastname?: string;
-    //   contact?:string
-    //   email?: string;  
-    //   passwod?: string; 
-    //   confirmpassword?: string;
-    // }
-
-
+    editRapport(id:any, rapport:any): Observable<Rapport> {
+        return this.http.put<Rapport>(this.baseUrl + 'api/rapport/edit/' + id, JSON.stringify(rapport))
+        // .pipe(
+        //   catchError(this.errorHandler)
+        // )
+      }
+    }

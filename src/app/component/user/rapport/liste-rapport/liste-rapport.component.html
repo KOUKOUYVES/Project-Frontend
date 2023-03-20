@@ -16,7 +16,7 @@
                     </div> -->
             
                     <div class="report-header">
-                        <h1 class="recent-Articles">Liste Des Rapport</h1>
+                        <h1 class="recent-Articles">Liste Des Rapports</h1>
                         <a routerLink="/create-rapport"><button class="view">Create New User</button></a> 
                     </div>
                     <div class="card-body">
@@ -34,12 +34,10 @@
                                 <td>{{ rapport.titre_rapport }}</td>
                                 <td>{{ rapport.rapport_date |date:'fullDate' }}</td>
                                 <td>{{ rapport.texte_rapport }}</td>
-                                <!-- <td>{{ rapport.email }}</td>
-                                <td>{{ rapport.contact }}</td> -->
                                 <td>
-                                        <a class="btn btn-outline-info" type="button" href="">Show</a>
-                                        <a class="btn btn-outline-success" type="button" href="">Edit</a>
-                                        <button type="button"  onclick="return confirmRegistre(this)" (click)="deleteRapport(rapport)" class="btn btn-outline-danger">Delete</button>
+                                        <a class="btn btn-outline-info" style="width: 100px;" type="button" routerLink="/view-rapport/{{rapport.id}}">Show</a>
+                                        <a class="btn btn-outline-success" style="width: 100px;" type="button" routerLink="/edit-rapport/{{rapport.id}}">Edit</a>
+                                        <button type="button" style="width: 100px;" (click)="deleteRapport(rapport.id)" class="btn btn-outline-danger"  >Delete</button>
                                 </td>
                             </tr>
                             <!-- {% endfor %} -->
@@ -52,29 +50,5 @@
        
     </div>
 
-    <script>
-
-        function confirmRegistre(el) {
-                swal({
-                    title: "Êtes-vous sûr ?",
-                    text: "Une fois supprimé, vous ne pourrez pas récupérer ce fichier!",
-                    icon: "warning",
-                    buttons: true,
-                    dangerMode: true,
-                    })
-                    .then((willDelete) => {
-                    if (willDelete) {
-                        // swal("Poof! Your imaginary file has been deleted!", {
-                        // icon: "success",
-                        // });
-                        window.location = el.getAttribute("href");
-                    } else {
-                        swal("Votre fichier  est en sécurité !");
-                    }
-                    });
-                    return false;
-                }
-            </script>
-         
 
     

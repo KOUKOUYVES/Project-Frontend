@@ -11,8 +11,8 @@ export class User {
 
 
 export class Rapport {
-  rapport_id?: number;  
+  id?: number;  
   titre_rapport?: string;  
-  text_rapport?: string;
+  texte_rapport?: string;
   rapport_date?: Date;
 }

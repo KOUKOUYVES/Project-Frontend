@@ -6,7 +6,9 @@ import { PageNotFoundComponent } from './component/pages/page-not-found/page-not
 import { RegisterComponent } from './component/pages/register/register.component';
 import { UserdashboardComponent } from './component/user/dashboard/userdashboard/userdashboard.component';
 import { CreateRapportComponent } from './component/user/rapport/create-rapport/create-rapport.component';
+import { EditRapportComponent } from './component/user/rapport/edit-rapport/edit-rapport.component';
 import { ListeRapportComponent } from './component/user/rapport/liste-rapport/liste-rapport.component';
+import { ViewRapportComponent } from './component/user/rapport/view-rapport/view-rapport.component';
 
 const routes: Routes = [
 
@@ -23,6 +25,16 @@ const routes: Routes = [
   {
     path: 'all_rapport',
     component: ListeRapportComponent
+  },
+
+  {
+    path: 'edit-rapport/:id',
+    component: EditRapportComponent
+  },
+
+  {
+    path: 'view-rapport/:id',
+    component: ViewRapportComponent
   },
 
   {

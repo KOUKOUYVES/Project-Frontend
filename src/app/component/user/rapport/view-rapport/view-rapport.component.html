@@ -1,0 +1,35 @@
+
+<app-navbar-user></app-navbar-user>
+    <div class="main-container">
+        <div class="navcontainer">
+            <app-sidebar-user></app-sidebar-user>
+        </div>
+        <div class="container"><br><br><br><br>
+            <h1>View Post</h1>
+   
+            <a href="#" routerLink="/post/index" class="btn btn-primary">Back</a>
+            
+            <div>
+                <strong>ID:</strong>
+                <p>{{rapport.id }}</p>
+            </div>
+            
+            <div>
+                <strong>Title:</strong>
+                <p>{{ rapport.titre_rapport }}</p>
+            </div>
+            
+            <div>
+                <strong>Date:</strong>
+                <p>{{ rapport.rapport_date }}</p>
+            </div>
+        
+            <div>
+                <strong>Body:</strong>
+                <p>{{ rapport.texte_rapport }}</p>
+            </div>
+        </div>
+       
+    </div>
+
+    

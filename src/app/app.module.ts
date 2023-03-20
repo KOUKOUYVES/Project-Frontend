@@ -24,6 +24,7 @@ import { NavbarUserComponent } from './component/user/dashboard/navbar-user/navb
 import { SidebarUserComponent } from './component/user/dashboard/sidebar-user/sidebar-user.component';
 import { DeleteRapportComponent } from './component/user/rapport/delete-rapport/delete-rapport.component';
 import { ListeRapportComponent } from './component/user/rapport/liste-rapport/liste-rapport.component';
+import { ViewRapportComponent } from './component/user/rapport/view-rapport/view-rapport.component';
 
 
 @NgModule({
@@ -48,6 +49,7 @@ import { ListeRapportComponent } from './component/user/rapport/liste-rapport/li
     SidebarUserComponent,
     DeleteRapportComponent,
     ListeRapportComponent,
+    ViewRapportComponent,
   ],
   imports: [
     BrowserModule,

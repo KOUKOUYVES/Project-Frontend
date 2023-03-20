@@ -12,7 +12,6 @@ import { RapportService } from 'src/app/component/service/rapport.service';
 })
 export class CreateRapportComponent {
 
-
   registerFormRapport : any;
   submitted = false;
   vals = ''
@@ -32,19 +31,15 @@ export class CreateRapportComponent {
           rapport_date: ['', Validators.required],
       });
   }
-
   // getter pratique pour un accès facile aux champs du formulaire
   get f() { 
     return this.registerFormRapport.controls; 
     }
-
-
-
     onSubmit(){
-      // if (this.registerFormRapport.invalid) {
-      //           return;
-      //       }
-      // console.log(this.registerFormRapport.value);
+      if (this.registerFormRapport.invalid) {
+                return;
+            }
+      console.log(this.registerFormRapport.value);
       
       this.rapportService.createRapport(this.registerFormRapport.value).subscribe(
         (data:any)=>{

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RapportService } from 'src/app/component/service/rapport.service';
+import { Router } from '@angular/router';
+import { SweetAlertArrayOptions } from 'sweetalert2';
 
 @Component({
   selector: 'app-liste-rapport',
@@ -10,22 +12,26 @@ export class ListeRapportComponent implements OnInit {
 
   rapports: any;
 
-  constructor( private rapportservice: RapportService) { }
+  constructor( 
+    private rapportservice: RapportService,
+    private router: Router,
+    
+    ) { }
 
   ngOnInit(): void {
     this.rapportservice.getRapport().subscribe(
       (result:any)=>{
-        //console.log(result)
+        console.log(result)
         this.rapports  =  result.data;
       }
     )
-
   }
 
-  deleteRapport(rapport:any){
-   // console.log(id);
-    this.rapportservice.deleteRapport(rapport.id).subscribe(data=>{
-      this.rapports = this.rapports.filter((u: any) => u !== rapport);
+  deleteRapport(id:any){
+    this.rapportservice.deleteRapports(id).subscribe(data=>{
+      window.location.reload()
+
     })
   }
+
 }

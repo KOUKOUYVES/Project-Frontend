@@ -16,7 +16,6 @@ export class RegisterComponent implements OnInit {
   vals = ''
   data= this.vals.split(',');
 
-
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
@@ -39,8 +38,6 @@ export class RegisterComponent implements OnInit {
   get f() { 
     return this.registerForm.controls; 
     }
-
-
 
     onSubmit(){
       if (this.registerForm.invalid) {
