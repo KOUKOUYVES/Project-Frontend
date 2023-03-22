@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ConnexionComponent } from './component/pages/connexion/connexion.component';
+import { ContactComponent } from './component/pages/contact/contact.component';
 import { HomeComponent } from './component/pages/home/home.component';
 import { PageNotFoundComponent } from './component/pages/page-not-found/page-not-found.component';
 import { RegisterComponent } from './component/pages/register/register.component';
@@ -20,6 +21,11 @@ const routes: Routes = [
   {
     path: 'register-user',
     component: RegisterComponent 
+  },
+
+  {
+    path: 'contact-user',
+    component: ContactComponent 
   },
 
   {

@@ -38,7 +38,7 @@ export class RapportService {
 
 
     getRapport() {
-      return this.http.get(this.baseUrl + 'all_rapport');
+      return this.http.get(this.baseUrl + 'all_rapport_admin');
     } 
 
     // loginUser(user:any) {
@@ -62,8 +62,15 @@ export class RapportService {
 
     }
 
-    editRapport(id:any, rapport:any): Observable<Rapport> {
-        return this.http.put<Rapport>(this.baseUrl + 'api/rapport/edit/' + id, JSON.stringify(rapport))
+    editRapport(id:any, rapport:any){
+      let token = this.userService.getLocalStorage("token");
+      const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+      }),
+    };
+        return this.http.put<Rapport>(this.baseUrl + 'api/rapport/edit/' + id, JSON.stringify(rapport), httpOptions)
         // .pipe(
         //   catchError(this.errorHandler)
         // )

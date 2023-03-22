@@ -66,88 +66,14 @@ private formBuilder: FormBuilder,
     console.log(this.editFormRapport.value);
     this.rapportService.editRapport(this.id, this.editFormRapport.value).subscribe((res:any) => {
          console.log('Rapport updated successfully!');
-            this.router.navigate(['/dahboard-user']);  
+            this.router.navigate(['/all_rapport']);  
 
     })
   }
-
-
-
   onReset(){
     this.submitted = false;
     this.editFormRapport.reset();
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  // editFormRapport : any;
-  // submitted = false;
-  // id !: number;
-  // rapport! :Rapport
-  // // data= this.vals.split(',');
-
-     
-  // constructor(
-  //   private formBuilder: FormBuilder,
-  //   private router: Router,
-  //   private rapportService:RapportService,
-  //   private url : ActivatedRoute
-
-  // ){
-  //   this.editFormRapport = this.formBuilder.group({
-  //     id:[],
-  //     titre_rapport: ['', Validators.required],
-  //     texte_rapport: ['', Validators.required],
-  //     rapport_date: ['', Validators.required],
-  // })
-  // }
-
-  // ngOnInit(): void {
-  //   this.id = this.url.snapshot.params['id'];
-  //     this.rapportService.find(this.id).subscribe((
-  //       (data:Rapport)=>{
-  //         this.rapport = data;
-  //       }
-  //     ))
-  // }
-
-  // get f() { 
-  //   return this.editFormRapport.controls; 
-  //   }
-
-  //     onEdit(){
-  //       this.rapportService.editRapport( this.id,this.editFormRapport.value).subscribe(
-  //         (data:any)=>{
-  //           console.log(data);
-  //           this.router.navigate(['/dahboard-user']);  
-  //         },  
-  //       error => {  
-  //         alert(error);
-  //       });
-  //   }
-
-  //   onReset() {
-  //       this.submitted = false;
-  //       this.editFormRapport.reset();
-  //   }
-
-    
+  }    
 }
 
 

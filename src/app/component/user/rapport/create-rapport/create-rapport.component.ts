@@ -44,11 +44,10 @@ export class CreateRapportComponent {
       this.rapportService.createRapport(this.registerFormRapport.value).subscribe(
         (data:any)=>{
           console.log(data);
-          
            this.router.navigate(['/dahboard-user']);  
         },  
        error => {  
-         alert(error);
+         alert("veillez vous connecter avant de pouvoir enregistrer un rapport");
        });
       // //afficher les valeurs du formulaire en cas de succès
       // alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerFormRapport.value, null, 4));

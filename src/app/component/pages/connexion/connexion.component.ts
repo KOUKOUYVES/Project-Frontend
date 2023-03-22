@@ -56,7 +56,7 @@ export class ConnexionComponent {
             console.log(response);
             this.userService.setLocalStorage("token", JSON.stringify(response.token));
             this.userService.setLocalStorage("current_data", JSON.stringify(response.data));
-             this.router.navigate(['/dahboard-user']);  
+            this.router.navigate(['/dahboard-user']);  
           },  
          error => {  
            alert(error);

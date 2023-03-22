@@ -44,18 +44,15 @@ export class RegisterComponent implements OnInit {
                 return;
             }
       // console.log(this.registerForm.value);
-      
       this.userService.createUser(this.registerForm.value).subscribe(
         (data:any)=>{
           console.log(data);
-          
            this.router.navigate(['/login-user']);  
         },  
        error => {  
          alert(error);
        });
-      // //afficher les valeurs du formulaire en cas de succès
-      // alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value, null, 4));
+      
   }
 
   onReset() {

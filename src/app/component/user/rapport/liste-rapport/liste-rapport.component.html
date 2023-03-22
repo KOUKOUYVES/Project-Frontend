@@ -17,11 +17,12 @@
             
                     <div class="report-header">
                         <h1 class="recent-Articles">Liste Des Rapports</h1>
-                        <a routerLink="/create-rapport"><button class="view">Create New User</button></a> 
+                        <a routerLink="/create-rapport"><button class="view">Create New Rapport</button></a> 
                     </div>
                     <div class="card-body">
                         <table class="table table-bordered">
                             <tr>
+                                <th>#</th>
                                 <th>Titre Rapport</th>
                                 <th>Date Rapport</th>
                                 <th>Contenu Rapport</th>
@@ -31,6 +32,7 @@
                             </tr>
                             <!-- {% for user in projects %} -->
                             <tr *ngFor="let rapport of rapports; let i = index;">
+                                <td>{{ rapport.id }}</td>
                                 <td>{{ rapport.titre_rapport }}</td>
                                 <td>{{ rapport.rapport_date |date:'fullDate' }}</td>
                                 <td>{{ rapport.texte_rapport }}</td>
