@@ -19,13 +19,12 @@ export class UserService {
           return this.http.get('http://localhost:8000/', { headers });
         }
 
-  getStudents() {
-    return this.http.get<User[]>(this.baseUrl+'view.php');
-  } 
-
-
     createUser(user:any) {
       return this.http.post(this.baseUrl + 'user/add', user);
+    } 
+
+    getUser(user:any) {
+      return this.http.get(this.baseUrl + 'all/users', user);
     } 
 
 
@@ -34,6 +33,7 @@ export class UserService {
       return this.http.post(this.baseUrl + 'api/login_check', user);
     }
 
+    //stocker les token dans localstorage
     setLocalStorage(name: string, value: any) {
       localStorage.setItem(name, value);
     }
@@ -45,19 +45,10 @@ export class UserService {
     deleteLocalStorage(name: string) {
       localStorage.removeItem(name);
     }
-  
+  //vider le localstorage
     viderLocalStorage(name: string) {
       localStorage.clear();
     }
 }
 
 
-// export class Users{
-//   user_id?: number;  
-//   firstname?: string;  
-//   lastname?: string;
-//   contact?:string
-//   email?: string;  
-//   passwod?: string; 
-//   confirmpassword?: string;
-// }

@@ -35,18 +35,9 @@ export class ConnexionComponent {
     return this.loginForm.controls; 
     }
 
-  // onSubmit() {
-  //     this.submitted = true;
-
-  //     // arrêter ici si le formulaire est invalide 
-  //     if (this.loginForm.invalid) {
-  //         return;
-  //     }
-
-
       onSubmit(){
         this.submitted = true;
-
+         // arrêter ici si le formulaire est invalide 
         if (this.loginForm.invalid) {
           return
         }
@@ -56,17 +47,12 @@ export class ConnexionComponent {
             console.log(response);
             this.userService.setLocalStorage("token", JSON.stringify(response.token));
             this.userService.setLocalStorage("current_data", JSON.stringify(response.data));
-            this.router.navigate(['/dahboard-user']);  
+            this.router.navigate(['/all_rapport']);  
           },  
          error => {  
            alert(error);
          });
 
-
-
-
-      // afficher les valeurs du formulaire en cas de succès
-      //alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.loginForm.value, null, 4));
   }
 
   onReset() {

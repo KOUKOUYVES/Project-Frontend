@@ -67,7 +67,6 @@ private formBuilder: FormBuilder,
     this.rapportService.editRapport(this.id, this.editFormRapport.value).subscribe((res:any) => {
          console.log('Rapport updated successfully!');
             this.router.navigate(['/all_rapport']);  
-
     })
   }
   onReset(){

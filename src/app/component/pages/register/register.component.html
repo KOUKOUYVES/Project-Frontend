@@ -1,6 +1,6 @@
 <app-navbar></app-navbar>
 <section class="vh-100 bg-image"
-  style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
+  style="background-image: url('../../../../assets/rapport1.jpg');">
   <div class="mask d-flex align-items-center h-100 gradient-custom-3">
     <div class="container h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
@@ -36,7 +36,7 @@
 
                 <div class="form-outline mb-4">
                   <label class="form-label" for="form3Example1cg">Contact</label>
-                  <input type="tel" name="contact" formControlName="contact" [ngClass]="{ 'is-invalid': submitted && f['contact'].errors }" id="form3Example1cg" placeholder="Entrer votre Contact" class="form-control form-control-sm" />
+                  <input type="number" name="contact" formControlName="contact" [ngClass]="{ 'is-invalid': submitted && f['contact'].errors }" id="form3Example1cg" placeholder="Entrer votre Contact" class="form-control form-control-sm" />
                   <div *ngIf="submitted && f['contact'].errors" class="invalid-feedback">
                       <div *ngIf="f['contact'].errors['required']"> Le Contact est obligatoire</div>
                    </div>

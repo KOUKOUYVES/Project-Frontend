@@ -44,7 +44,7 @@ export class CreateRapportComponent {
       this.rapportService.createRapport(this.registerFormRapport.value).subscribe(
         (data:any)=>{
           console.log(data);
-           this.router.navigate(['/dahboard-user']);  
+           this.router.navigate(['/all_rapport']);  
         },  
        error => {  
          alert("veillez vous connecter avant de pouvoir enregistrer un rapport");
